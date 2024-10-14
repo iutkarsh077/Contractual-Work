@@ -1,9 +1,7 @@
-import RoutePath from "./components/RoutePath"
-
 const App = () => {
   return (
     <>
-      <RoutePath/> 
+      Hii
     </>
   )
 }

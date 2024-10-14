@@ -1,15 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import SignIn from "./Login";
 import Dashboard from "./Dashboard";
-const RoutePath = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<SignIn/>}/>
-        <Route path="/dashboard" element={<Dashboard/>}/>
-      </Routes>
-    </Router>
-  )
-}
+import Layout from "../Layout";
 
-export default RoutePath
+const RouterPath = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout/>}>
+      <Route path="" element={<SignIn/>}/>
+      <Route path='dashboard' element={<Dashboard/>} />
+    </Route>
+  )
+)
+
+export default RouterPath
+
